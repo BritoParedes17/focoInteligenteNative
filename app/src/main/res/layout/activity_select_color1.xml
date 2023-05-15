@@ -81,6 +81,32 @@
             android:background="@color/green" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/mensajeColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Texto xd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/saveText"
+        android:backgroundTint="@color/colorPrincipal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.799" />
+
+
     <!-->
     <androidx.compose.ui.platform.ComposeView
         android:id="@+id/pruebaCompose"

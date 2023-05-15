@@ -8,6 +8,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.pruebaconnavbar.databinding.FragmentSecondBinding
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import android.widget.Toast
 
 
 /**
@@ -39,9 +43,39 @@ class SecondFragment : Fragment() {
             startActivity(intent)
         }
 
+        val buttonOn = view.findViewById<Button>(R.id.btnConsultar)
+        buttonOn.setOnClickListener{View.OnClickListener {
+            turnOnLED() }
+        }
+
+        
         /*binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }*/
+    }
+
+    private fun turnOnLED() {
+        val client = OkHttpClient()
+
+        var miVariable = "hola"
+        println(miVariable)
+
+        val request = Request.Builder()
+            .url("http://www.google.com")
+            .get()
+            .build()
+
+        try {
+            val response = client.newCall(request).execute()
+            if (response.isSuccessful) {
+                println("Existos")
+            } else {
+                Toast.makeText(requireContext(), "La solicitud falló", Toast.LENGTH_SHORT).show()
+                println("Fallo")
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     override fun onDestroyView() {
